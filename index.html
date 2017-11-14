@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Hello...</title>
+		
+		<link rel="stylesheet" href="bower_components/bulma/css/bulma.css">
+		<link rel="stylesheet" href="bower_components/font-awesome/css/font-awesome.min.css">
+		
+		<script src="bower_components/pdfjs-dist/build/pdf.js"></script>
+		<script src="bower_components/pdfjs-dist/build/pdf.worker.js"></script>
+        
+		<script src="bower_components/angular/angular.min.js"></script>
+		<script src="bower_components/angular-pdf/dist/angular-pdf.min.js"></script>
+		<script src="bower_components/angularUtils-pagination/dirPagination.js"></script>
+		
+		<script src="js/pdf-reader.js"></script>
+		
+		<style type="text/css">
+			nav {
+			    margin-bottom: 1.5em;
+			}
+			
+			.none {
+				display: none;
+			}
+		</style>
+	</head>
+
+	<body ng-app="pdfReader">
+		
+		
+		<div class="columns" ng-controller="PdfListController">
+			<div class="column">
+				<div class="columns">
+					<div class="column">
+						<span class="is-size-3">Documents</span>
+					</div>
+					<div class="column is-narrow is-centered">
+						<div class="field">
+						  <div class="control has-icons-left">
+						    <input class="input" type="text" placeholder="Search a document" ng-model="searchManual">
+						    <span class="icon is-small is-left">
+						      <i class="fa fa-search"></i>
+						    </span>
+						  </div>
+						</div>
+					</div>
+				</div>
+				<table class="table is-striped is-fullwidth">
+					<tbody>
+						<tr dir-paginate="pdf in pdfs | filter:searchManual | itemsPerPage:10">
+							<td>{{pdf.title}}</td>
+							<td><a href="#" ng-click="view(pdf)" class="button is-primary is-small"><i class="fa fa-eye"></i></a></td>
+						</tr>
+					</tbody>
+					<tfoot>
+	                    <td>
+	                        <dir-pagination-controls
+						       max-size="5"
+						       direction-links="true"
+						       boundary-links="true" >
+						    </dir-pagination-controls>
+	                    </td>
+	                </tfoot>
+				</table>
+			</div>
+			<div class="column box">
+					<div class="is-size-3">
+						<span>
+							{{pdfName}}
+						</span>
+						<progress class="progress is-small is-primary {{loading}}" value="{{progress}}" max="100">{{progress}}%</progress>
+						</div>
+					<div class="column is-narrow is-centered">
+				<ng-pdf template-url="partials/viewer.html" scale="page-fit"></ng-pdf>
+			</div>
+		</div>	
+	</body>
+</html>

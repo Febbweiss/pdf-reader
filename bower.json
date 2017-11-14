@@ -1,0 +1,30 @@
+{
+  "name": "pdf-reader",
+  "authors": [
+    "febbweiss <fabrice.ecaille@gmail.com>"
+  ],
+  "description": "A webpage to read stored pdf",
+  "main": "index.html",
+  "keywords": [
+    "pdf",
+    "reader"
+  ],
+  "license": "MIT",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "angularjs#1.6.6",
+    "angular-pdf": "^2.0.0",
+    "bulma": "^0.6.1",
+    "font-awesome": "fontawesome#^4.7.0",
+    "bower": "*",
+    "install": "^1.0.4",
+    "angularUtils-pagination": "angular-utils-pagination#^0.11.1"
+  }
+}
