@@ -23,8 +23,6 @@
     "angular-pdf": "^2.0.0",
     "bulma": "^0.6.1",
     "font-awesome": "fontawesome#^4.7.0",
-    "bower": "*",
-    "install": "^1.0.4",
     "angularUtils-pagination": "angular-utils-pagination#^0.11.1"
   }
 }
