@@ -51,7 +51,7 @@
 				</div>
 				<table class="table is-striped is-fullwidth">
 					<tbody>
-						<tr dir-paginate="pdf in pdfs | filter:searchManual | itemsPerPage:10">
+						<tr dir-paginate="pdf in pdfs | filter:searchManual | orderBy:'title' | itemsPerPage:10">
 							<td>{{pdf.title}}</td>
 							<td><a href="#" ng-click="view(pdf)" class="button is-primary is-small"><i class="fa fa-eye"></i></a></td>
 						</tr>
