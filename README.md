@@ -24,6 +24,16 @@ The list is rendering such as a paginated table with a quick filter input. Click
 
 Documents are stored in a _documents_ folder.
 
+
+Built with :
+---
+
+* UI : [Bulma](https://bulma.io)
+* MVC : [AngularJS](https://angularjs.org/)
+* PDF Reader : [angular-pdf](http://github.com/sayanee/angularjs-pdf)
+* Pagination : [angularUtils](https://github.com/michaelbromley/angularUtils.git)
+* Icons : [Font Awesome](http://fontawesome.io)
+
 Licence :
 ----------
 
