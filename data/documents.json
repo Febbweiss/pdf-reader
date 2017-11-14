@@ -1,0 +1,5 @@
+[
+    {"title": "The Mercurial SCM", "link": "mercurial-overview.pdf"},
+    {"title": "Version Control with Subversion", "link": "svn-book.pdf"},
+    {"title": "GIT Cheat Sheet", "link": "github-git-cheat-sheet.pdf"}
+]
