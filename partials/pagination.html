@@ -1,0 +1,12 @@
+<nav class="pagination" role="navigation" aria-label="pagination" ng-if="1 < pages.length || !autoHide">
+    <a class="pagination-previous" ng-click="setCurrent(pagination.current - 1)" ng-if="directionLinks" ng-class="{ disabled : pagination.current == 1 }">&lsaquo;</a>
+    <a class="pagination-next" ng-click="setCurrent(pagination.current + 1)" ng-if="directionLinks" ng-class="{ disabled : pagination.current == pagination.last }">&rsaquo;</a>
+    
+    
+
+    <ul class="pagination-list">
+        <li ng-repeat="pageNumber in pages track by tracker(pageNumber, $index)" ng-class="{ active : pagination.current == pageNumber, disabled : pageNumber == '...' }">
+            <a href="" class="pagination-link" ng-click="setCurrent(pageNumber)">{{ pageNumber }}</a>
+        </li>
+    </ul>
+</nav>
