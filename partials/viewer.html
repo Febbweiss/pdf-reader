@@ -1,12 +1,12 @@
 <nav ng-class="getNavStyle(scroll)">
-  <button ng-click="goPrevious()"><span>&lt;</span></button>
-  <button ng-click="goNext()"><span>&gt;</span></button>
+  <button class="button fa fa-caret-left" ng-click="goPrevious()"></button>
+  <button class="button fa fa-caret-right" ng-click="goNext()"></button>
 
-  <button ng-click="zoomIn()"><span>+</span></button>
-  <button ng-click="fit()"><span>100%</span></button>
-  <button ng-click="zoomOut()"><span>-</span></button>
+  <button class="button fa fa-search-plus" ng-click="zoomIn()"></button>
+  <button class="button fa fa-file-o" ng-click="fit()"></button>
+  <button class="button fa fa-search-minus" ng-click="zoomOut()"></button>
 
-  <button ng-click="rotate()"><span>90</span></button>
+  <button class="button fa fa-repeat" ng-click="rotate()"></button>
 </nav>
 <div class="notification is-primary is-danger {{errorStatus}}">
   {{error}}
