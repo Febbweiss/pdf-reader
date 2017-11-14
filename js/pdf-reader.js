@@ -39,14 +39,14 @@ angular.module('pdfReader', ['pdf', 'angularUtils.directives.dirPagination'])
   
   
   $scope.view = function(pdf) {
-    $scope.pdfUrl = '/documents/' + pdf.link;
+    $scope.pdfUrl = 'documents/' + pdf.link;
     $scope.pdfName = pdf.title;
     $scope.progress = 0;
   };
   
   $scope.pdfs = [];
   
-  $http.get("/data/documents.json").then(function(response){ 
+  $http.get("data/documents.json").then(function(response){ 
      $scope.pdfs = response.data;
   });
 
