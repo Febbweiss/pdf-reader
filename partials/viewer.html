@@ -1,13 +1,41 @@
-<nav ng-class="getNavStyle(scroll)">
-  <button class="button fa fa-caret-left" ng-click="goPrevious()"></button>
-  <button class="button fa fa-caret-right" ng-click="goNext()"></button>
-
-  <button class="button fa fa-search-plus" ng-click="zoomIn()"></button>
-  <button class="button fa fa-file-o" ng-click="fit()"></button>
-  <button class="button fa fa-search-minus" ng-click="zoomOut()"></button>
-
-  <button class="button fa fa-repeat" ng-click="rotate()"></button>
-</nav>
-<div class="notification is-primary is-danger {{errorStatus}}">
-  {{error}}
+<div ng-if="pdfName">
+  <div class="is-pulled-left">
+    <a href="{{pdfUrl}}" class="field button fa fa-download"></a>
+  </div>
+  <nav ng-class="getNavStyle(scroll)" class="is-pulled-right" >
+    
+      <div class="field">
+        <div class="field-body">
+          <div class="field is-grouped-right">
+            <p class="control">
+              <button class="button is-normal fa fa-caret-left" ng-click="goPrevious()"></button>
+              <button class="button is-normal fa fa-caret-right" ng-click="goNext()"></button>
+            </p>
+          </div>
+          
+          <div class="field is-horizontal has-addon pageInput">
+            <p class="control">
+              <input class="input" type="text" min=1 ng-model="pageNum">
+            </p>
+            <p class="control">
+              <a class="button is-static">
+                {{pageCount}}
+              </a>
+            </p>
+          </div>
+          
+          <div class="field is-grouped-right">
+            <p class="control">
+              <button class="button is-normal fa fa-search-plus" ng-click="zoomIn()"></button>
+              <button class="button is-normal fa fa-file-o" ng-click="fit()"></button>
+              <button class="button is-normal fa fa-search-minus" ng-click="zoomOut()"></button>
+              <button class="button is-normal fa fa-repeat" ng-click="rotate()"></button>
+            </p>
+          </div>
+        </div>
+      </div>
+  </nav>
+  <div class="notification is-primary is-danger {{errorStatus}}">
+    {{error}}
+  </div>
 </div>
