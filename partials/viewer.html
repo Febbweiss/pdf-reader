@@ -1,11 +1,11 @@
-<div ng-if="pdfName">
-  <div class="is-pulled-left">
-    <a href="{{pdfUrl}}" class="field button fa fa-download"></a>
-  </div>
+<div ng-if="pdfName" ng-class="{'pdf-controls fixed': scroll > 100, 'pdf-controls': scroll <= 100}">
   <nav ng-class="getNavStyle(scroll)" class="is-pulled-right" >
     
       <div class="field">
         <div class="field-body">
+          <div class="field">
+             <a href="{{pdfUrl}}" class="button fa fa-download"></a>
+          </div>
           <div class="field is-grouped-right">
             <p class="control">
               <button class="button is-normal fa fa-caret-left" ng-click="goPrevious()"></button>
